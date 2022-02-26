@@ -7,6 +7,7 @@ var arr = [10,20,30,40,50,60]
 */
 
 //Code Here
+var firstItem = 10
 
 
 ////////// PROBLEM 2 //////////
@@ -15,6 +16,11 @@ var arr = [10,20,30,40,50,60]
 */
 
 //Code Here
+
+let lastItemRemoved = arr.pop(60)
+  console.log(lastItemRemoved);
+  console.log(arr);
+
 
 ////////// PROBLEM 3 //////////
 
@@ -28,7 +34,9 @@ var family = ['Tyler', 'Jordan', 'Ryan', 'Alice', 'Ireland'];
 
 //Code Here
 
-
+for (var i = 0; i<family.length; i++){
+  console.log(family[i])
+}
 
 ////////// PROBLEM 4 //////////
 
@@ -43,6 +51,20 @@ let evensArr = []
 
 //Code Here
 
+var evenNumbers = function(nums) {
+  for (var i = 0; i < nums.length; i++) {
+
+      if ((nums[i] % 2) != 1) {
+          evensArr.push(nums[i]);
+              console.log(evensArr);
+              console.log(nums)
+      }
+     
+  }
+
+};
+
+evenNumbers(nums);
 
 
 ////////// PROBLEM 5 //////////
@@ -52,12 +74,27 @@ var score = 74
 // Do not edit the code above.
 
 /*
-  Determine if the letter grade of the given variable 'score'. If the variable is a 90 or above, console log an 'A', between 80 and 89, console log a 'B', between 70 and 79, 'C', between 60 and 69, 'D', and anything below 60 should console log an 'F'.
+  Determine if the letter grade of the given variable 'score'. If the variable is a 90 or above, console log an 'A', between 80 and 89, console log a 'B',
+   between 70 and 79, 'C', between 60 and 69, 'D', and anything below 60 should console log an 'F'.
 */
 
 //Code Here
 
-
+if (score >= 90) {
+  console.log('A')
+}
+else if (score >= 80 && score <= 89){
+  console.log('B')
+}
+else if (score >= 70 && score <= 79){ 
+  console.log('C')
+}
+else if (score >= 60 && score <= 69){ 
+  console.log('D')
+}
+else if (score < 60){ 
+  console.log('F')
+}
 ////////// Intermediate Problems //////////
 
 ////////// PROBLEM 6 //////////
@@ -72,14 +109,22 @@ var myFavoriteNumbers = [4,8,12,16,20,24];
 
 //Code Here
 
+var someNum =(myFavoriteNumbers[4])
+
+console.log(someNum)
 
 ////////// PROBLEM 7 //////////
 
-// Subscripting (accessing values using their index) an array can fail. What happens if you subscript to the 7th element, but there are not 7 elements in the array? Let's write some code to check for that. 
-// Use an if statement to check the length of the 'myFavoriteNumbers' array. If it's less than 7, log 'There are not enough elements in this array' to the console. If the length is more than 7, reassign the value of 'someNum' to the value of the 7th element in the array. (Hint: how can you make sure that your code works for exactly 7 elements? What index do you use to get the 7th element?)
+// Subscripting (accessing values using their index) an array can fail. What happens if you subscript to the 7th element, but there are not 7 elements in 
+//the array? Let's write some code to check for that. 
+// Use an if statement to check the length of the 'myFavoriteNumbers' array. If it's less than 7, log 'There are not enough elements in this array' 
+//to the console. If the length is more than 7, reassign the value of 'someNum' to the value of the 7th element in the array. (Hint: how can you make sure 
+//that your code works for exactly 7 elements? What index do you use to get the 7th element?)
 
 //Code Here
-
+if (myFavoriteNumbers.length < 7){
+  console.log('There are not enough elements in this array')
+}
 
 ////////// PROBLEM 8 //////////
 
@@ -91,7 +136,11 @@ var listOfNumbers = [1,2,3,4,5,6,7,8,9,10,11,12];
 
 //Code Here
 
-
+for(var i = 0; i < listOfNumbers.length; i++) {
+  if(listOfNumbers[i] % 3 == 0 ){
+     console.log(listOfNumbers[i]);
+  }
+}
 ////////// PROBLEM 9 //////////
 // Do not edit the code below.
 var letters = ['A', 'B', 'C', 'D', 'E'];
@@ -103,6 +152,9 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 
 //Code Here
 
+for (var i = letters.length - 1; i >= 0; i--) {
+    console.log(letters[i]);
+  }
 
 ////////// Advanced Problems //////////
 
@@ -125,11 +177,28 @@ If the letter grade is not one of the above letters, console.log 'Not an eligibl
 
 //Code Here
 
-
+switch(letterGrade) {
+  case 'A':
+    console.log("The student is doing excellently.")
+    break;
+  case 'B':
+    console.log("The student is doing well.")
+    break;
+  case 'C':
+    console.log("The student is doing alright.")
+    break;
+  case 'D':
+    console.log("The student is not doing very well.")
+    break;
+  case 'F':
+    console.log("The student is failing.")
+}
 
 ////////// PROBLEM 11 //////////
 /* The famous FizzBuzz, Devmountain style!
-  Create a for loop that iterates from 1 to 100. In this for loop, using some conditional logic, if the number your for loop is currently on is divisible by 3, console.log 'Dev'. If the number is divisible by 5, console.log 'mountain'. If the number is divisible by 5 & 3, console.log 'Devmountain'. If the number is not divisible by 5 or 3, console.log the number itself. Hint: Look up the modulo operator.
+  Create a for loop that iterates from 1 to 100. In this for loop, using some conditional logic, if the number your for loop is currently on is divisible by 3, 
+  console.log 'Dev'. If the number is divisible by 5, console.log 'mountain'. If the number is divisible by 5 & 3, console.log 'Devmountain'. If the number is
+   not divisible by 5 or 3, console.log the number itself. Hint: Look up the modulo operator.
 
   Your output should look like:
   1
@@ -152,3 +221,23 @@ If the letter grade is not one of the above letters, console.log 'Not an eligibl
 */
 
 //Code Here
+
+for ( var i = 1; i <= 100; i++ )
+{
+  if ( i%3 === 0 && i%5 === 0 )
+  {
+    console.log( i + " Devmountain" );
+  }
+  else if ( i%3 === 0 ) 
+  {
+    console.log(i+ " Dev" );
+  }
+  else if ( i%5 === 0 ) 
+  {
+    console.log(i+ " Mountain" );
+  }
+  else
+  {
+    console.log(i);
+  }
+}
